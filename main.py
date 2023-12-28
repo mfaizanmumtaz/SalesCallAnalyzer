@@ -113,6 +113,8 @@ def transcriber():
         st.title("Phone Call Analyzer")
         audio_file = st.file_uploader("Upload an audio file", type=["wav", "mp3","m4a",'ogg'])
         if audio_file is not None:
+            if "audio" not in os.listdir():
+                os.mkdir("audio")
             audio_file_path = os.path.join("audio",audio_file.name)
             with st.spinner("Audio file is being transcript."):
                 try:
