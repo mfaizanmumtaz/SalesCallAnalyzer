@@ -6,6 +6,9 @@ from langchain.prompts import ChatPromptTemplate
 from langchain.chat_models import ChatOpenAI
 import shelve
 import os
+os.environ["LANGCHAIN_TRACING_V2"] = "true"
+os.environ["LANGCHAIN_ENDPOINT"] = "https://api.langchain.plus"
+os.environ["LANGCHAIN_PROJECT"]="Audo Evaluation"
 
 FEW_SHORT_TRAINING_ONE = ""
 TERMS_AND_CONDITIONS = ""
