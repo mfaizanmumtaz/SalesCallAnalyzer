@@ -140,4 +140,3 @@ if transcript:
         for key,value in response.items():
             st.subheader(key.upper())
             st.write(value)
-# i have add a new code here
