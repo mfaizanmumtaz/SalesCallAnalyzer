@@ -1,4 +1,4 @@
 # Sales Phone Calls Analyzer
-Sales phone calls analyzer is project.
+Sales phone calls analyzer project.
 <br>
-Auther-Muhmmad Faizan Mumtaz
+Author - Muhammad Faizan Mumtaz
