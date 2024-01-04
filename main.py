@@ -44,7 +44,7 @@ prompt = ChatPromptTemplate.from_messages([
 
 chain = prompt | model | StrOutputParser()
 
-Quality_Assurance_Scorecard_Chain = RunnablePassthrough() | (lambda x: [{"question":question["question"],"transcription":x["transcription"] } for question in Quality_Assurance_Scorecard_Questions[:4]]) | chain.map() | (lambda x: "\n\n".join(x).replace("\n", "<br>"))
+Quality_Assurance_Scorecard_Chain = RunnablePassthrough() | (lambda x: [{"question":question["question"],"transcription":x["transcription"] } for question in Quality_Assurance_Scorecard_Questions]) | chain.map() | (lambda x: "\n\n".join(x).replace("\n", "<br>"))
 
 vulnerability_prompt = ChatPromptTemplate.from_messages([
 
