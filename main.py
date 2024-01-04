@@ -118,8 +118,7 @@ sentiment_chain = ChatPromptTemplate.from_messages([
 
 ]) | model | StrOutputParser()
 
-# map_chain = RunnableParallel(Quality_Assurance_Scorecard=Quality_Assurance_Scorecard_Chain,Vulnerability=vulnerability_prompt_chain,Customer_Objections=objection_prompt,Employee_Sales_Techniques=sales_techniques,Summary_Of_Call=summarizer_prompt,Overall_Call_Sentiment=sentiment_chain)
-map_chain = RunnableParallel(Quality_Assurance_Scorecard=Quality_Assurance_Scorecard_Chain)
+map_chain = RunnableParallel(Quality_Assurance_Scorecard=Quality_Assurance_Scorecard_Chain,Vulnerability=vulnerability_prompt_chain,Customer_Objections=objection_prompt,Employee_Sales_Techniques=sales_techniques,Summary_Of_Call=summarizer_prompt,Overall_Call_Sentiment=sentiment_chain)
 
 import streamlit as st
 import assemblyai as aai
@@ -154,7 +153,7 @@ def transcriber():
                 finally:
                     os.remove(audio_file_path)          
 
-# transcript = transcriber()
+transcript = transcriber()
 if transcript:
     with st.spinner("Please wait..."):
         res=map_chain.with_config(configurable={"llm":"google"}).invoke({"transcription": transcript})      
