@@ -32,8 +32,8 @@ prompt = ChatPromptTemplate.from_messages([
 
     Use the following output format:
     Separate your answers with Python \\n line breaks that can be used in streamlit app to parse it.
-    Question: <User Question> \\n
-    Answer: <Answer in Yes Or No Depending on your analysis> \\n
+    Question: <User Question>
+    Answer: <Answer in Yes Or No Depending on your analysis>
     Explanation: <One sentence consice explanation>
     
     Note: Please do not generate any extra text and always do your best to follow the above-written instructions. It is very important for my career.
