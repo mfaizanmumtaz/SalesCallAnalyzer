@@ -68,8 +68,6 @@ vulnerability_prompt_chain = RunnablePassthrough.assign(
     vulnerability_examples= lambda x: VULNERABILITY_EXAMPLES
 ) | vulnerability_prompt | model | StrOutputParser()
 
-vulnerability_prompt_chain.invoke({"transcription":"we are best"})
-
 objection_prompt = ChatPromptTemplate.from_messages(
     [
         ("user","""You are an objection detector assistant in customer support call (delimited with XML tags).Plase follow these steps to complete the task:
